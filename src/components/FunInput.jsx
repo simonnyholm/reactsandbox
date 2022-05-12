@@ -1,9 +1,41 @@
 import { useState } from "react";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 
 const FunInput = () => {
+  const styles = {
+    personBackground: css`
+      width: 220px;
+      height: 350px;
+      background-color: blue;
+      padding: 20px 10px;
+    `,
+    hair: css`
+      margin: 0 auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-color: brown;
+    `,
+    head: css`
+      margin: -85px auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: tan;
+      writing-mode: vertical-rl;
+      text-align: center;
+      padding: 30px 20px 40px 40px;
+      font-size: 40px;
+    `,
+    beard: css`
+        
+    `
+  };
+
   const [genderValue, setGenderValue] = useState("person");
   const [pronounValue, setPronounValue] = useState("den");
-  const [nameValue, setNameValue] = useState("et eller andet");
+  const [nameValue, setNameValue] = useState(" en ukendt person");
   const [ageValue, setAgeValue] = useState("et uvist antal");
   const [addressValue, setAddressValue] = useState("en ukendt adresse");
   const [cityValue, setCityValue] = useState("en ukendt by");
@@ -13,6 +45,29 @@ const FunInput = () => {
 
   return (
     <>
+      <div className="personBackground" css={styles.personBackground}>
+        <div className="hair" css={styles.hair}></div>
+        <div className="head" css={styles.head}>
+          {" "}
+          <span css={styles.eyes}>8</span>
+          <span css={styles.nose}>^</span>
+        </div>
+        <div className="beard" css={styles.beard}>
+          )
+        </div>
+        <div className="outfitTop" css={styles.outfitTop}>
+          ...
+        </div>
+        <div className="arms" css={styles.arms}>
+          tatooVar
+        </div>
+        <div className="outfitBottom" css={styles.outfitBottom}></div>
+        <div className="feet">
+          <div className="leftFoot" css={styles.leftFoot}>
+            <div className="rightFoot" css={styles.leftFoot}></div>
+          </div>
+        </div>
+      </div>
       <p>
         Der var engang en fantastisk <span>{genderValue}</span>, som blev kaldt
         ved det flotte navn <span>{nameValue}</span>. På denne skønne dag var
