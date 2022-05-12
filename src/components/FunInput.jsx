@@ -98,11 +98,15 @@ const FunInput = () => {
       width: 20px;
       height: 70px;
       background-color: maroon;
+      border-right: 3px dotted #200a0a;
+      border-left: 3px dotted #200a0a;
     `,
     rightLeg: css`
       width: 20px;
       height: 70px;
       background-color: maroon;
+      border-right: 3px dotted #200a0a;
+      border-left: 3px dotted #200a0a;
     `,
     feet: css`
       margin: -30px auto;
