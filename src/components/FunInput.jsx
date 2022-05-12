@@ -1,13 +1,16 @@
 import { useState } from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import unicorn from "../img/unicorn.png";
 
 const FunInput = () => {
   const styles = {
     personBackground: css`
-      width: 220px;
-      height: 350px;
       background-color: blue;
+    `,
+    personBox: css`
+      width: 220px;
+      height: 400px;
       padding: 20px 10px;
     `,
     hair: css`
@@ -16,6 +19,11 @@ const FunInput = () => {
       height: 110px;
       border-radius: 50%;
       background-color: brown;
+      writing-mode: vertical-rl;
+      text-align: center;
+      padding: 54px 20px 40px 40px;
+      font-size: 40px;
+      color: blue;
     `,
     head: css`
       margin: -85px auto;
@@ -29,8 +37,95 @@ const FunInput = () => {
       font-size: 40px;
     `,
     beard: css`
-        
-    `
+      margin: 55px auto 0;
+      width: 35px;
+      height: 28px;
+      background-color: brown;
+      border-radius: 40%;
+      writing-mode: vertical-rl;
+      padding: 5px;
+      color: #d75959;
+      font-weight: 700;
+    `,
+    neck: css`
+      width: 20px;
+      height: 20px;
+      margin: 0 auto;
+      background-color: tan;
+    `,
+    arms: css`
+      width: 170px;
+      height: 20px;
+      background-color: tan;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 600;
+    `,
+    rightFingers: css`
+      position: relative;
+    `,
+    outfitTop: css`
+      margin: -22px auto -20px;
+      width: 75px;
+      height: 120px;
+      background-color: rgb(220, 94, 16);
+      clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+      writing-mode: vertical-rl;
+      text-align: center;
+      padding: 10px auto;
+      font-size: 40px;
+      border-top: dotted #200a0a;
+      border-bottom: dotted #200a0a;
+    `,
+    holdItem: css`
+      position: absolute;
+      width: 10px;
+      margin-top: -15px;
+    `,
+    holdItemImg: css`
+      width: 40px;
+    `,
+    legs: css`
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      height: 100px;
+      width: 50px;
+    `,
+    leftLeg: css`
+      width: 20px;
+      height: 70px;
+      background-color: maroon;
+    `,
+    rightLeg: css`
+      width: 20px;
+      height: 70px;
+      background-color: maroon;
+    `,
+    feet: css`
+      margin: -30px auto;
+      display: flex;
+      justify-content: space-around;
+      height: 20px;
+      width: 50px;
+      padding-right: 5px;
+    `,
+    leftFoot: css`
+      width: 25px;
+      height: 12px;
+      background-color: #513b11;
+      clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+      padding: 0 0 10px 5px;
+    `,
+    rightFoot: css`
+      width: 25px;
+      height: 12px;
+      background-color: #513b11;
+      clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+      padding: 0 0 10px 5px;
+    `,
   };
 
   const [genderValue, setGenderValue] = useState("person");
@@ -46,25 +141,42 @@ const FunInput = () => {
   return (
     <>
       <div className="personBackground" css={styles.personBackground}>
-        <div className="hair" css={styles.hair}></div>
-        <div className="head" css={styles.head}>
-          {" "}
-          <span css={styles.eyes}>8</span>
-          <span css={styles.nose}>^</span>
-        </div>
-        <div className="beard" css={styles.beard}>
-          )
-        </div>
-        <div className="outfitTop" css={styles.outfitTop}>
-          ...
-        </div>
-        <div className="arms" css={styles.arms}>
-          tatooVar
-        </div>
-        <div className="outfitBottom" css={styles.outfitBottom}></div>
-        <div className="feet">
-          <div className="leftFoot" css={styles.leftFoot}>
-            <div className="rightFoot" css={styles.leftFoot}></div>
+        <div className="personBox" css={styles.personBox}>
+          <div className="hair" css={styles.hair}>
+            :
+          </div>
+          <div className="head" css={styles.head}>
+            {" "}
+            <span css={styles.eyes}>8</span>
+            <span css={styles.nose}>^</span>
+          </div>
+          <div className="beard" css={styles.beard}>
+            )
+          </div>
+          <div className="neck" css={styles.neck}></div>
+          <div className="arms" css={styles.arms}>
+            <p css={styles.leftFingers}>=</p> <p css={styles.leftTatoo}>#</p>{" "}
+            <p></p> <p></p>
+            <p css={styles.leftTatoo}>$</p> <p css={styles.rightFingers}>=</p>
+          </div>
+          <div className="holdItem" css={styles.holdItem}>
+            <img css={styles.holdItemImg} src={unicorn} alt="" />
+          </div>
+          <div className="outfitTop" css={styles.outfitTop}>
+            ..........
+          </div>
+
+          <div className="legs" css={styles.legs}>
+            <div className="leftLeg" css={styles.leftLeg}></div>
+            <div className="rightLeg" css={styles.rightLeg}></div>
+          </div>
+          <div className="feet" css={styles.feet}>
+            <div className="leftFoot" css={styles.leftFoot}>
+              #
+            </div>
+            <div className="rightFoot" css={styles.rightFoot}>
+              #
+            </div>
           </div>
         </div>
       </div>
